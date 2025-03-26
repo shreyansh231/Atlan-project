@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #282c34;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 .App-logo {
@@ -14,18 +22,23 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(12px + 2vmin);
   color: white;
+  text-align: center;
 }
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: #a0d8ff;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +48,106 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App-sidebar {
+  height: 100vh;
+  background-color: #1f222a;
+  color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.App-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.textarea {
+  display: flex;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  width: 500px;
+  min-height: 40px;
+  color: #ffffff;
+  background-color: #282c34;
+  resize: none;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.textarea:focus {
+  border-color: #61dafb;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 500px;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #0077e6;
+  transform: scale(1.05);
+}
+
+.App-Suggestions {
+  background-color: #f5f5f5;
+  max-width: 320px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.App-Suggestions-Title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: center;
+}
+
+.App-Suggestions-List {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 200px;
+}
+
+.App-Suggestions-List-Item {
+  background-color: #ffffff;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-family: monospace;
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.App-Suggestions-List-Item:hover {
+  background-color: #e6f7ff;
+  transform: scale(1.03);
 }
