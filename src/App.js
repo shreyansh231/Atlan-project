@@ -1,12 +1,41 @@
 import { useState } from "react";
 import "./App.css";
 import TableStructure from "./table";
+import TableUI from "./tableUi";
 
 function App() {
+  const [header, setHeader] = useState([]);
+  const [rows, setRows] = useState([]);
   const [inputQuery, setInputQuery] = useState("");
-  const [ishoverQuery, setIshoverQuery] = useState(false);
+  const [tableData, setTableData] = useState(1);
+  const [mode, setMode] = useState("table");
+  function getTableInfo(data) {
+    let infoStore = null;
+    if (data === 1) {
+      infoStore = require("./customers.json");
+    } else if (data === 2) {
+      infoStore = require("./products.json");
+    }
+    let tableHeaders = [];
+    let tableRows = [];
+    for (var i = 0; i < infoStore.length; i++) {
+      const row = infoStore[i];
+      if (i === 0) {
+        for (const item in row) {
+          tableHeaders.push(row[item]);
+        }
+      } else {
+        let temp = [];
+        for (const item in row) {
+          temp.push(row[item]);
+        }
+        tableRows.push(temp);
+      }
+    }
+    return { tableHeaders, tableRows };
+  }
   const customers = require("./customers.json");
-  const suppliers = require("./suppliers.json");
+  // const suppliers = require("./suppliers.json");
   const products = require("./products.json");
   return (
     <div className="App">
@@ -16,47 +45,57 @@ function App() {
           <div className="App-Suggestions-List">
             <p
               className="App-Suggestions-List-Item"
-              onClick={() => setInputQuery("SELECT * FROM table_name;")}
+              onClick={() => {
+                setInputQuery("SELECT * FROM products;");
+                setTableData(2);
+              }}
             >
-              SELECT * FROM table_name;
+              SELECT * FROM products;
             </p>
             <p
               className="App-Suggestions-List-Item"
-              onClick={() =>
-                setInputQuery("SELECT column1, column2 FROM table_name;")
-              }
+              onClick={() => {
+                setInputQuery("SELECT column1, column2 FROM table_name;");
+                setTableData(1);
+              }}
             >
               SELECT column1, column2 FROM table_name;
             </p>
             <p
               className="App-Suggestions-List-Item"
-              onClick={() =>
-                setInputQuery("SELECT * FROM table_name WHERE condition;")
-              }
+              onClick={() => {
+                setInputQuery("SELECT * FROM customers WHERE condition;");
+                setTableData(1);
+              }}
             >
-              SELECT * FROM table_name WHERE condition;
+              SELECT * FROM customers WHERE condition;
             </p>
             <p
               className="App-Suggestions-List-Item"
-              onClick={() =>
-                setInputQuery("SELECT * FROM table_name ORDER BY column_name;")
-              }
+              onClick={() => {
+                setInputQuery("SELECT * FROM customers ORDER BY column_name;");
+                setTableData(1);
+              }}
             >
-              SELECT * FROM table_name ORDER BY column_name;
+              SELECT * FROM customers ORDER BY column_name;
             </p>
             <p
               className="App-Suggestions-List-Item"
-              onClick={() => setInputQuery("SELECT * FROM table_name LIMIT 5;")}
+              onClick={() => {
+                setInputQuery("SELECT * FROM customers LIMIT 5;");
+                setTableData(1);
+              }}
             >
-              SELECT * FROM table_name LIMIT 5;
+              SELECT * FROM customers LIMIT 5;
             </p>
             <p
               className="App-Suggestions-List-Item"
-              onClick={() =>
+              onClick={() => {
                 setInputQuery(
                   "SELECT * FROM table_name WHERE condition ORDER BY column_name LIMIT 5;"
-                )
-              }
+                );
+                setTableData(1);
+              }}
             >
               SELECT * FROM table_name WHERE condition ORDER BY column_name
               LIMIT 5;
@@ -70,18 +109,54 @@ function App() {
         </header>
         <textarea
           className="textarea"
-          onBlur={() => setIshoverQuery(false)}
-          onFocus={() => setIshoverQuery(true)}
           value={inputQuery}
           onChange={(e) => setInputQuery(e.target.value)}
         />
         <div className="button-container">
-          <button className="button" onClick={() => setInputQuery("")}>
+          <button
+            className="button"
+            onClick={() => {
+              setInputQuery("");
+              setHeader([]);
+              setRows([]);
+            }}
+          >
             Clear Query
           </button>
-          <button className="button" onClick={() => console.log("Run Query")}>
+          <button
+            className="button"
+            onClick={() => {
+              if(inputQuery === "") {
+                alert("Please enter a query");
+                return;
+              }
+              const { tableHeaders, tableRows } = getTableInfo(tableData);
+              setHeader(tableHeaders);
+              setRows(tableRows);
+            }}
+          >
             Run Query
           </button>
+        </div>
+        <div className="Output">
+          <p className="Output-Title">Output</p>
+          <div className="Output-Mode">
+            <button
+              className="Output-Mode-Button"
+              onClick={() => setMode("table")}
+            >
+              Table
+            </button>
+            <button
+              className="Output-Mode-Button"
+              onClick={() => setMode("Graph")}
+            >
+              Graph
+            </button>
+          </div>
+          <div className="Output-Data">
+            <TableUI headers={header} rows={rows} />
+          </div>
         </div>
       </div>
       <div className="App-tabledata">
