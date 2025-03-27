@@ -92,7 +92,7 @@
 .App-Suggestions-Title {
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -111,7 +111,7 @@
   border: 1px solid #ddd;
   font-family: monospace;
   font-size: 14px;
-  color: #444;
+  color: var(--text-color);
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
@@ -127,14 +127,15 @@
   width: 320px;
   padding: 20px;
   height: 100%;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .App-tabledata-Title {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 15px;
-  color: #000000;
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -283,7 +284,10 @@
 }
 
 
-
+.DLMode:hover{
+  scale: 1.05;
+  transition: 500ms ease-in-out;
+}
 
 
 .Output {
@@ -297,17 +301,16 @@
 .Output-Title {
   font-size: 20px;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--text-color);
   margin-bottom: 10px;
 }
 
 .Output-Data {
   width: 550px;
-  max-height: 250px;
+  max-height: 220px;
   border-radius: 8px;
   border: 1px solid #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-  
   overflow: scroll;
   scrollbar-width: none;
 }
@@ -340,4 +343,123 @@
 
 .Output-Mode-Button.active {
   background-color: #007bff; /* Highlight the selected mode */
+}
+
+
+
+/* Default Light Mode */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --sidebar-bg: #f0f0f0;
+  --textarea-bg: #ffffff;
+  --textarea-border: #cccccc;
+  --button-bg: #1890ff;
+  --button-hover-bg: #0077e6;
+  --suggestion-bg: #f9f9f9;
+  --suggestion-item-bg: #ffffff;
+  --table-bg: #f9f9f9;
+  --table-header-color: #333;
+  --table-border: #ddd;
+  --table-text-color: #333;
+  --output-bg: #ffffff;
+  --output-border: #cccccc;
+  --output-mode-bg: #007bff;
+  --output-mode-hover: #0056b3;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --bg-color: #282c34;
+  --text-color: #ffffff;
+  --sidebar-bg: #1f222a;
+  --textarea-bg: #282c34;
+  --textarea-border: #ffffff;
+  --button-bg: #1890ff;
+  --button-hover-bg: #0077e6;
+  --suggestion-bg: #2e2e2e;
+  --suggestion-item-bg: #3a3a3a;
+  --table-bg: #1f1f1f;
+  --table-header-color: #ffffff;
+  --table-border: #444;
+  --table-text-color: #ddd;
+  --output-bg: #333;
+  --output-border: #ffffff;
+  --output-mode-bg: #6366f1;
+  --output-mode-hover: #444;
+}
+
+/* Apply variables */
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.App-header {
+  color: var(--text-color);
+}
+
+.App-sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--text-color);
+}
+
+.textarea {
+  background-color: var(--textarea-bg);
+  border: 1px solid var(--textarea-border);
+  color: var(--text-color);
+}
+
+.textarea:focus {
+  border-color: #61dafb;
+}
+
+.button {
+  background-color: var(--button-bg);
+}
+
+.button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.App-Suggestions {
+  background-color: var(--suggestion-bg);
+}
+
+.App-Suggestions-List-Item {
+  background-color: var(--suggestion-item-bg);
+}
+
+.App-tabledata {
+  background-color: var(--table-bg);
+  color: var(--table-text-color);
+}
+
+.table-structure {
+  background-color: var(--table-bg);
+  border: 1px solid var(--table-border);
+}
+
+.Output {
+  background-color: var(--output-bg);
+}
+
+.Output-Data {
+  border: 1px solid var(--output-border);
+}
+
+.Output-Mode-Button {
+  background-color: var(--output-mode-bg);
+}
+
+.Output-Mode-Button:hover {
+  background-color: var(--output-mode-hover);
 }
