@@ -35,9 +35,9 @@ const Sidebar = ({ setInputQuery, setTableData }) => {
                 wrapLines={true}
                 wrapLongLines={true}
                 customStyle={{
-                  overflowX: "auto",  // Enables horizontal scrolling
-                  whiteSpace: "nowrap", // Prevents wrapping
-                  scrollbarWidth: "none", // Hides scrollbar
+                  overflowX: "auto",  
+                  whiteSpace: "nowrap", 
+                  scrollbarWidth: "none", 
                 }}
                
               >
