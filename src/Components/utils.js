@@ -12,7 +12,7 @@ export function getTableInfo(data) {
     return { tableHeaders, tableRows };
   }
   
-  export function generateGraphData(data, tableData) {
+  export function generateGraphData(data) {
     let infoStore = null;
     if (data === 1) {
       infoStore = require("../data/customers.json");
@@ -25,7 +25,7 @@ export function getTableInfo(data) {
     
     return tableRows.map((row, index) => ({
       name: tableHeaders[index],
-      value: Number(row[tableData !== 1 ? 6 : 7]),
+      value: Number(row[data !== 1 ? 6 : 7]),
     }));
   }
   
