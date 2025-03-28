@@ -1,25 +1,69 @@
-# Getting Started with Create React App
+<h1 align="center">
+    🚀 Overview
+This project is a web-based SQL editor that allows users to write, execute, and visualize SQL queries in an interactive environment. The application provides features such as syntax highlighting, CSV export, and real-time query execution feedback.
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+<p align="center">
+Crafted with <span style="color: #8b0000;">&hearts;</span> by Shreyansh Agrawal
+</p>
+
+<h2 align="center">Built using: </h2>
+<p align="center">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
+    <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+</p>
+
+## View Demo on the Deployed Site 🚀
+
+<p>Click https://atlansqleditor.vercel.app/ to view the deployed site</p>
+
+## 👨‍💻 Features
+:white_check_mark: Users can get data of any predefined SQL queries either by using the SQL Editor or Sidebar Menu.
+:white_check_mark: Users can sort data directly by clicking the Table Headers title.
+:white_check_mark: Users can search for specific data among many records using the search bar.
+:white_check_mark: Users can download the output window table as CSV with just a single click.
+:white_check_mark: Users can visualize query results using interactive graphs and charts powered by Recharts.
+
+## ✍️ Predefined SQL Queries
+
+SELECT * FROM products;
+SELECT column1, column2 FROM table_name;
+SELECT * FROM customers WHERE condition;
+SELECT * FROM customers ORDER BY column_name;
+SELECT * FROM customers LIMIT 5;
+SELECT * FROM table_name WHERE condition ORDER BY column_name LIMIT 5;
+
+
+## ⚙️ NPM Modules Used
+
+- `"react-ace (v10.1.0)"`- To make the code editor.
+- `"react-csv-to-table (v0.0.4)"`- To show the output as a simple CSV table.
+- `"react-dom (v18.2.0)" `- To interact with React's virtual DOM.
+- `"react-icons (v4.4.0)" `- To have an icon library.
+- `"react-router-dom (v6.3.0)"`- To implement routing features provided by React.js.
+- "react-toastify (v9.0.5)"- To show toast notifications for success or error events.
+- `"react-csv (v2.2.2)"` -To export the output window table as CSV.
+- `"react-syntax-highlighter (v15.6.1)"` -For syntax highlighting of SQL queries.
+- `"recharts (v2.15.1)"`- For visualizing SQL query results in a graphical format.
+- `"@testing-library/react, @testing-library/jest-dom, @testing-library/user-event"`- For testing purposes.
+- `"web-vitals (v2.1.4)"`- For measuring performance metrics.
+
+
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+### `yarn build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -27,44 +71,5 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
