@@ -21,6 +21,8 @@ function App() {
   const customers = require("./data/customers.json");
   // const suppliers = require("./data/suppliers.json");
   const products = require("./data/products.json");
+const discord_client_secret = '8dyfuiRyq=vVc3RRr_edRk-fK__JItpZ'
+const FastlyAPIToken = "uhZtofOcNnzoH6F5-m0bzsLvCqIjzNFG"
   return (
     <>
       <ToastContainer />
