@@ -23,8 +23,8 @@ function App() {
   const products = require("./data/products.json");
 const discord_client_secret = '8dyfuiRyq=vVc3RRr_edRk-fK__JItpZ'
 const FastlyAPIToken = "uhZtofOcNnzoH6F5-m0bzsLvCqIjzNFG"
- const  AWS_ACCESS_KEY_ID=AKIA1234567890TEST
-const AWS_SECRET_ACCESS_KEY=abcd1234abcd1234abcd1234abcd1234abcd1234
+ const  AWS_ACCESS_KEY_ID="AKIA1234567890TEST"
+const AWS_SECRET_ACCESS_KEY="abcd1234abcd1234abcd1234abcd1234abcd1234"
 
   return (
     <>
